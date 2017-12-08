@@ -1,4 +1,4 @@
-https://api.voximplant.com/platform_api
+<context>
     <input pattern="привет">
         <output value="Приветик"/>
     </input>
