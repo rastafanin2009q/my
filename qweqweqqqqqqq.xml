@@ -1,19 +1,15 @@
 <context>
-    <input pattern="привет">
-        <output value="Приветик"/>
-    </input>
-    <input pattern="* как * дела *">
-        <output value="Отлично! А твои?"/>
-        <context modal="true">
-            <input pattern="* (хорош*|отличн*|прекрасн*) *">
-                <output>
-                    <item value="Это просто замечательно!"/>
-                    <item value="Здорово!"/>
-                </output>
-            </input>
-            <input pattern="* (плох*|не очень|так себе) *">
-                <output value="Не вешай нос!"/>
-            </input>
-        </context>
-    </input>
+  <input pattern="/start">
+    <output value="Hello! Here is a reception of the best hotel."/> <!-- User hears this prompt -->
+    
+    <context> <!-- Go to the inner context to continue a conversation -->
+      <input pattern="* book *">
+        ...
+      </input>
+      <input pattern="bye *"> <!-- Once the user is saying goodbye... -->
+        <output value="Thank you for your call. Bye!"/>
+        <context/> <!-- ...jump to the root context to hang up -->
+      </input>
+    </context>
+  </input>
 </context>
