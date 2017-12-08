@@ -1,0 +1,15 @@
+<context>
+  <input pattern="/start">
+    <output value="привет"/> <!-- User hears this prompt -->
+    
+    <context> <!-- Go to the inner context to continue a conversation -->
+      <input pattern="* book *">
+        ...
+      </input>
+      <input pattern="bye *"> <!-- Once the user is saying goodbye... -->
+        <output value="Thank you for your call. Bye!"/>
+        <context/> <!-- ...jump to the root context to hang up -->
+      </input>
+    </context>
+  </input>
+</context>
