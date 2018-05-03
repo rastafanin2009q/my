@@ -1,8 +1,8 @@
 <context>
   <input pattern="/start">
-    <output value="Hello! Here is a reception of the best hotel."/> <!-- User hears this prompt -->
+    <output value="Hello! Here is a reception of the best hotel."/> 
     
-    <context> <!-- Go to the inner context to continue a conversation -->
+    <context <!-- Go to the inner context to continue a conversation -->
       <input pattern="* book *">
         ...
       </input>
